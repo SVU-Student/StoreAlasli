@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8">
+  <title>المنتجات</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="myFunctions.js"></script>
+</head>
+
+<body>
+  <div dir="rtl">
+  <header>
+    <div class="header-container">
+     
+    <h1>متجر الاصلي الالكتروني</h1>
+  </div>
+  <nav>
+    <ul>
+      <li class="store-logo">
+        <img src="images/logo.png" alt="Store Logo">
+    </li>
+      <li><a href="home.html">الصفحة الرئيسية</a></li>
+      <li><a href="Appliances.html">المنتجات</a></li>
+      <li><a href="aboutus.html">من نحن</a></li>
+      <li><a href="https://svusudutent.github.io/StoreAlasli/home.html" class="button1" target="_blank">الموقع الالكتروني </a></li>
+  </ul>
+  </nav>
+
+  </header>
+  <br>
+
+  <center>
+    <h1><a href="#total"  >الذهاب إلى السلة </a></h1>
+    <table id="pTable">
+      <tr>
+        <th>المنتج</th>
+        <th>تفاصيل</th>
+        <th>السعر</th>
+        <th>الصورة</th>
+      </tr>
+    </table>
+  </center>
+  <center>
+    <h1>تفاصيل سلة المشتريات</h1>
+  </center>
+  <table id="cart-table">
+    <tr id="headercart">
+      <th>م.</th>
+      <th>المادة</th>
+      <th>السعر (ل.س)</th>
+      <th>الكمية</th>
+      <th>الاجمالي (ل.س)</th>
+    </tr>
+    <td></td>
+    <td colspan="3">ضريبة 5%</td>
+    <td id="tax"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td colspan="3">المجموع النهائي</td>
+      <td id="grand-total"></td>
+    </tr>
+    <tr>
+      <td id="total" colspan="5"></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        
+        <button type="button" id="toggleButton" onclick="toggleForm()" name="submitt"><a href="#myUsername">متابعة</a></button>
+        <button type="button" id ="resetCartTable"  onclick="resetCartTable()" name="submitt">إلغاء</button>
+
+      </td>
+    </tr>
+  </table>
+
+  <form  onsubmit="return false;" method="post" name="myForm" id="myForm" style="display:none;">
+    <div class="container">
+      <label for="name"><b> الاسم </b></label>
+      <input type="text" placeholder=" ادخل اسمك فقط بالغة العربية" id="myUsername" name="username" pattern="[\u0600-\u06FF\s]+"
+        required><br> <label for="student"><b>الايميل</b></label>
+      <input type="text" placeholder="ادخل البريد الإلكتروني" id="email" name="email"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br>
+      <label for="student"><b>الرقم الوطني</b></label>
+      <input type="text" placeholder=" ادخل الرقم الوطني" id="number_s" name="number_s" pattern="^(0[1-9]|1[0-5])[0-9]{9}$"
+        required><br>
+      <label for="date"><b>تاريخ الولاده</b>
+        <br></label>
+      <input type="text" placeholder="DD/MM/YYYY" id="birth-date" , name="birth-date"
+        pattern="(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}" required>
+
+
+      <br> <label for="phone"><b> رقم الهاتف </b></label>
+      <input type="text" placeholder="0911111111" id="phonenumber" name="phonenumber"
+        pattern="((0)(93|94|95|96|98|99)([0-9]{7}))|((0)(92|95|96|97)([0-9]{7}))" required>
+        <center><label for="verification"><b>  ادخل كود النحقق الكابتشا </b></label><br></center>
+
+      <center> <img alt="10" id="captchaImg" name="captchaImg" class="productImage"><br><br>
+        <input type="text" id="txtCompare" required />
+        <input type="button" id="btnrefresh" value=" تحديث الكود" name="submit" onclick="generateCaptcha();" /><br>
+        <button name="submit" onclick="validateForm()">شراء</button>
+      </center>
+
+  </form>
+
+</div>
+
+</body>
+
+</html>
